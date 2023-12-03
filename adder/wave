@@ -1,0 +1,78 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55f9f4e21480 .scope module, "full_adder" "full_adder" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in_1";
+    .port_info 1 /INPUT 1 "in_2";
+    .port_info 2 /INPUT 1 "cin";
+    .port_info 3 /OUTPUT 1 "sum";
+    .port_info 4 /OUTPUT 1 "count";
+L_0x55f9f4e35f10 .functor OR 1, L_0x55f9f4e359e0, L_0x55f9f4e36020, C4<0>, C4<0>;
+o0x7fb569b6f3a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55f9f4e35380_0 .net "cin", 0 0, o0x7fb569b6f3a8;  0 drivers
+v0x55f9f4e35440_0 .net "count", 0 0, L_0x55f9f4e35f10;  1 drivers
+v0x55f9f4e354e0_0 .net "h0_count", 0 0, L_0x55f9f4e359e0;  1 drivers
+v0x55f9f4e355e0_0 .net "h0_sum", 0 0, L_0x55f9f4e35ad0;  1 drivers
+v0x55f9f4e35680_0 .net "h1_count", 0 0, L_0x55f9f4e36020;  1 drivers
+o0x7fb569b6f138 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55f9f4e35770_0 .net "in_1", 0 0, o0x7fb569b6f138;  0 drivers
+o0x7fb569b6f168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55f9f4e35810_0 .net "in_2", 0 0, o0x7fb569b6f168;  0 drivers
+v0x55f9f4e358e0_0 .net "sum", 0 0, L_0x55f9f4e36110;  1 drivers
+S_0x55f9f4e21610 .scope module, "half_adder_inst0" "half_adder" 2 13, 3 1 0, S_0x55f9f4e21480;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in_1";
+    .port_info 1 /INPUT 1 "in_2";
+    .port_info 2 /OUTPUT 1 "sum";
+    .port_info 3 /OUTPUT 1 "count";
+L_0x7fb569b26060 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x55f9f4de70f0_0 .net *"_ivl_10", 0 0, L_0x7fb569b26060;  1 drivers
+v0x55f9f4e340b0_0 .net *"_ivl_11", 1 0, L_0x55f9f4e35e70;  1 drivers
+v0x55f9f4e34190_0 .net *"_ivl_3", 1 0, L_0x55f9f4e35bc0;  1 drivers
+L_0x7fb569b26018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x55f9f4e34280_0 .net *"_ivl_6", 0 0, L_0x7fb569b26018;  1 drivers
+v0x55f9f4e34360_0 .net *"_ivl_7", 1 0, L_0x55f9f4e35d00;  1 drivers
+v0x55f9f4e34490_0 .net "count", 0 0, L_0x55f9f4e359e0;  alias, 1 drivers
+v0x55f9f4e34550_0 .net "in_1", 0 0, o0x7fb569b6f138;  alias, 0 drivers
+v0x55f9f4e34610_0 .net "in_2", 0 0, o0x7fb569b6f168;  alias, 0 drivers
+v0x55f9f4e346d0_0 .net "sum", 0 0, L_0x55f9f4e35ad0;  alias, 1 drivers
+L_0x55f9f4e359e0 .part L_0x55f9f4e35e70, 1, 1;
+L_0x55f9f4e35ad0 .part L_0x55f9f4e35e70, 0, 1;
+L_0x55f9f4e35bc0 .concat [ 1 1 0 0], o0x7fb569b6f138, L_0x7fb569b26018;
+L_0x55f9f4e35d00 .concat [ 1 1 0 0], o0x7fb569b6f168, L_0x7fb569b26060;
+L_0x55f9f4e35e70 .arith/sum 2, L_0x55f9f4e35bc0, L_0x55f9f4e35d00;
+S_0x55f9f4e348a0 .scope module, "half_adder_inst1" "half_adder" 2 20, 3 1 0, S_0x55f9f4e21480;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in_1";
+    .port_info 1 /INPUT 1 "in_2";
+    .port_info 2 /OUTPUT 1 "sum";
+    .port_info 3 /OUTPUT 1 "count";
+L_0x7fb569b260f0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x55f9f4e34ac0_0 .net *"_ivl_10", 0 0, L_0x7fb569b260f0;  1 drivers
+v0x55f9f4e34ba0_0 .net *"_ivl_11", 1 0, L_0x55f9f4e364f0;  1 drivers
+v0x55f9f4e34c80_0 .net *"_ivl_3", 1 0, L_0x55f9f4e36250;  1 drivers
+L_0x7fb569b260a8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x55f9f4e34d70_0 .net *"_ivl_6", 0 0, L_0x7fb569b260a8;  1 drivers
+v0x55f9f4e34e50_0 .net *"_ivl_7", 1 0, L_0x55f9f4e36390;  1 drivers
+v0x55f9f4e34f80_0 .net "count", 0 0, L_0x55f9f4e36020;  alias, 1 drivers
+v0x55f9f4e35040_0 .net "in_1", 0 0, o0x7fb569b6f3a8;  alias, 0 drivers
+v0x55f9f4e35100_0 .net "in_2", 0 0, L_0x55f9f4e35ad0;  alias, 1 drivers
+v0x55f9f4e351a0_0 .net "sum", 0 0, L_0x55f9f4e36110;  alias, 1 drivers
+L_0x55f9f4e36020 .part L_0x55f9f4e364f0, 1, 1;
+L_0x55f9f4e36110 .part L_0x55f9f4e364f0, 0, 1;
+L_0x55f9f4e36250 .concat [ 1 1 0 0], o0x7fb569b6f3a8, L_0x7fb569b260a8;
+L_0x55f9f4e36390 .concat [ 1 1 0 0], L_0x55f9f4e35ad0, L_0x7fb569b260f0;
+L_0x55f9f4e364f0 .arith/sum 2, L_0x55f9f4e36250, L_0x55f9f4e36390;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "full_adder.v";
+    "half_adder.v";
